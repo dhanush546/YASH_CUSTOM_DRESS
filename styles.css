@@ -1,0 +1,29 @@
+body{
+    font-family:sans-serif;
+    background-color: #ffe6e6;
+}
+#heading{
+    font-style: normal;
+    font-size: 250%;
+    font-weight: bold;
+
+}
+#sub{
+    font-size: 300%;
+}
+.column {
+    float: left;
+    padding: 5px;
+}
+.class1{
+    font-weight: bold;
+    font-size: 250%;
+}
+.class2{
+    background-color:  whitesmoke;
+}
+#special{
+    color: blue;
+    font-size: 450%;
+}
+
