@@ -2,11 +2,124 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Custom T-shirt Design</title>
+    <style>
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+        }
+
+        #design-area {
+            border: 2px dashed #333;
+            height: 400px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        #tshirt {
+            width: 200px;
+            height: 280px;
+            background-color: #ffffff;
+            border: 1px solid #000;
+            position: relative;
+            margin: 50px auto;
+        }
+
+        #collar {
+            width: 80px;
+            height: 20px;
+            background-color: #ffffff;
+            border: 1px solid #000;
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+        }
+
+        #left-sleeve {
+            width: 60px;
+            height: 80px;
+            background-color: #ffffff;
+            border: 1px solid #000;
+            border-right: #fff;
+            position: absolute;
+            top: 50px;
+            left: 237px;
+            transform-origin: top left;
+        }
+
+        #right-sleeve {
+            width: 60px;
+            height: 80px;
+            background-color: #ffffff;
+            border: 1px solid #000;
+            border-left: #fff;
+            position: absolute;
+            top: 50px;
+            right: 237px;
+            transform-origin: top right;
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <h1>Design Your Custom T-shirt</h1>
+    </header>
+    <div class="container">
+        <div id="design-area">
+            <div id="tshirt"></div>
+            <div id="collar"></div>
+            <div id="left-sleeve"></div>
+            <div id="right-sleeve"></div>
+        </div>
+        <div class="color-option" style="background-color: #ffbb00;" onclick="changeTshirtColor('#ffbb00')"></div>
+        <div class="color-option" style="background-color: #ff0000;" onclick="changeTshirtColor('#ff0000')"></div>
+        <div class="color-option" style="background-color: #00ff00;" onclick="changeTshirtColor('#00ff00')"></div>
+        <div class="color-option" style="background-color: #0000ff;" onclick="changeTshirtColor('#0000ff')"></div>
+        <button id="save-button">Save Design</button>
+    </div>
+    <script>
+        function changeTshirtColor(color) {
+            document.getElementById('tshirt').style.backgroundColor = color;
+            document.getElementById('collar').style.backgroundColor = color;
+            document.getElementById('left-sleeve').style.backgroundColor = color;
+            document.getElementById('right-sleeve').style.backgroundColor = color;
+        }
+    </script>
 </body>
 </html>
