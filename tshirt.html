@@ -13,12 +13,9 @@
         }
 
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgb(0, 0, 0);
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            text-align: center;
         }
 
         #design-area {
@@ -72,27 +69,29 @@
         }
 
         #left-sleeve {
-            width: 60px;
-            height: 80px;
+            width: 45px;
+            height: 100px;
             background-color: #ffffff;
             border: 1px solid #000;
             border-right: #fff;
             position: absolute;
             top: 50px;
-            left: 237px;
+            left: 358px;
             transform-origin: top left;
+            border-top-left-radius: 100px;
         }
 
         #right-sleeve {
-            width: 60px;
-            height: 80px;
+            width: 45px;
+            height: 100px;
             background-color: #ffffff;
             border: 1px solid #000;
             border-left: #fff;
             position: absolute;
             top: 50px;
-            right: 237px;
+            right: 358px;
             transform-origin: top right;
+            border-top-right-radius: 100px;
         }
     </style>
 </head>
@@ -100,26 +99,42 @@
     <header>
         <h1>Design Your Custom T-shirt</h1>
     </header>
+    <br><br>
     <div class="container">
+        <div>
+            <label for="bodyColor" style="font-size: xx-large;"><b>Body color</b></label>
+            <input type="color" id="bodyColor" name="bodyColor" value="#00ff00">
+            <br><br>
+            <label for="collarColor" style="font-size: xx-large;"><b>Collar color</b></label>
+            <input type="color" id="collarColor" name="collarColor" value="#00ff00">
+            <br><br>
+            <label for="lsleeve" style="font-size: xx-large;"><b>Left sleeve color</b></label>
+            <input type="color" id="lsleeve" name="lsleeve" value="#00ff00">
+            <br><br>
+            <label for="rsleeve" style="font-size: xx-large;"><b>Right sleeve color</b></label>
+            <input type="color" id="rsleeve" name="rsleeve" value="#00ff00">
+        </div>    
         <div id="design-area">
             <div id="tshirt"></div>
             <div id="collar"></div>
             <div id="left-sleeve"></div>
             <div id="right-sleeve"></div>
         </div>
-        <div class="color-option" style="background-color: #ffbb00;" onclick="changeTshirtColor('#ffbb00')"></div>
-        <div class="color-option" style="background-color: #ff0000;" onclick="changeTshirtColor('#ff0000')"></div>
-        <div class="color-option" style="background-color: #00ff00;" onclick="changeTshirtColor('#00ff00')"></div>
-        <div class="color-option" style="background-color: #0000ff;" onclick="changeTshirtColor('#0000ff')"></div>
-        <button id="save-button">Save Design</button>
+            
     </div>
     <script>
-        function changeTshirtColor(color) {
-            document.getElementById('tshirt').style.backgroundColor = color;
-            document.getElementById('collar').style.backgroundColor = color;
-            document.getElementById('left-sleeve').style.backgroundColor = color;
-            document.getElementById('right-sleeve').style.backgroundColor = color;
-        }
+        document.getElementById("bodyColor").addEventListener("change", function(event) {
+            document.getElementById("tshirt").style.backgroundColor = event.target.value;
+        });
+        document.getElementById("collarColor").addEventListener("change", function(event) {
+            document.getElementById("collar").style.backgroundColor = event.target.value;
+        });
+        document.getElementById("lsleeve").addEventListener("change", function(event) {
+            document.getElementById("left-sleeve").style.backgroundColor = event.target.value;
+        });
+        document.getElementById("rsleeve").addEventListener("change", function(event) {
+            document.getElementById("right-sleeve").style.backgroundColor = event.target.value;
+        });
     </script>
 </body>
 </html>
