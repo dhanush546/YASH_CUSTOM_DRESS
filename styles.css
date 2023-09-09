@@ -1,29 +1,40 @@
-body{
-    font-family:sans-serif;
+.header{
+    font-family: 'Franklin Gothic';
+    padding: 10px 10px;
+    background-color: #e2c7c7;
+    text-align: center;
+    border: 5px solid #e2c7c7;
+    border-bottom: #e2c7c7;
+}
+
+.header a{
+    display: block;
+    block-size: 50px;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.header a:hover{
+    color: orange;
     background-color: #ffe6e6;
 }
-#heading{
-    font-style: normal;
-    font-size: 250%;
-    font-weight: bold;
 
-}
-#sub{
-    font-size: 300%;
-}
-.column {
-    float: left;
-    padding: 5px;
-}
-.class1{
-    font-weight: bold;
-    font-size: 250%;
-}
-.class2{
-    background-color:  whitesmoke;
-}
-#special{
-    color: blue;
-    font-size: 450%;
+body{
+    background-color: #ffe6e6;
 }
 
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.holder img{
+    width: 325;
+    height: 100%;
+    border: 2px solid;
+}
+
+.holder img:hover{
+    width: 500;
+    height: auto;
+}
